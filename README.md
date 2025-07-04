@@ -63,20 +63,20 @@ IVA | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO')
 <!-- Sconto applicato al prezzo -->
 Sconto | VARCHAR(50) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Informazioni sulla garanzia (tipo, durata) -->
-Garanzia |  - 
+Garanzia | VARCHAR(100) -NULL DEFAULT('1 ANNO DI GARANZIA') INDEX
 <!-- Accessori forniti con il veicolo -->
-Accessori |  - 
+Accessori | TEXT -NOTNULL 
 <!-- Ulteriori note tecniche sul veicolo -->
-Note_Tecniche |  - 
+Note_Tecniche | TEXT -NULL DEFAULT('CHIEDERE PER INFO')
 <!-- Codice Fiscale del proprietario (se necessario per motivi fiscali) -->
-Codice_Fiscale_Proprietario |  - 
+Codice_Fiscale_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Indirizzo del proprietario (se necessario per motivi fiscali) -->
-Indirizzo_Proprietario |  - 
+Indirizzo_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Città del proprietario (se necessario per motivi fiscali) -->
-Citta_Proprietario |  - 
+Citta_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- CAP del proprietario (se necessario per motivi fiscali) -->
-CAP_Proprietario |  - 
+CAP_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Telefono del proprietario (se necessario per motivi fiscali) -->
-Telefono_Proprietario |  - 
+Telefono_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Email del proprietario (se necessario per motivi fiscali) -->
-Email_Proprietario |  - 
+Email_Proprietario | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
