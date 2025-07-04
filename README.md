@@ -5,7 +5,7 @@ Modellizzare la struttura di una tabella per memorizzare tutti i dati riguardant
 ## Table name : Car
 
 <!-- Identificativo univoco dell'auto -->
-ID_Auto | TEXT -NOTNULL INDEX
+ID_Auto | TEXT -NOTNULL AUTOINCREMENT INDEX
 <!-- Marca del veicolo  -->
 Marca | VARCHAR(30) -NOTNULL INDEX
 <!-- Modello del veicolo-->
