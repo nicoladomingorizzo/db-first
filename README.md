@@ -4,15 +4,15 @@ Modellizzare la struttura di una tabella per memorizzare tutti i dati riguardant
 
 ## Table name : Car
 
-<!-- Identificativo univoco dell'auto (es. numero di telaio) -->
-ID_Auto | CHAR(17) -NOTNULL UNIQUE
-<!-- Marca del veicolo (es. Fiat, BMW, Toyota) -->
+<!-- Identificativo univoco dell'auto -->
+ID_Auto | TEXT -NOTNULL INDEX
+<!-- Marca del veicolo  -->
 Marca | VARCHAR(30) -NOTNULL INDEX
-<!-- Modello del veicolo (es. Panda, Serie 3, Yaris) -->
+<!-- Modello del veicolo-->
 Modello | NOTNULL -INDEX
 <!-- Anno di produzione del veicolo -->
 Anno | YEAR -NOTNULL INDEX 
-<!-- Dettagli specifici del modello (es. 1.2 69cv, 3 porte, Connect) -->
+<!-- Dettagli specifici del modello -->
 Allestimento | TEXT(1000) -NOTNULL DEFAULT('VERSIONE BASE')
 <!-- Colore del veicolo -->
 Colore | VARCHAR(20) -NOTNULL DEFAULT('BIANCO')
@@ -23,45 +23,45 @@ Prezzo_Acquisto | VARCHAR(30) -NOTNULL INDEX
 <!-- Prezzo di vendita del veicolo (se venduto) -->
 Prezzo_Vendita | VARCHAR(30) -NOTNULL DEFAULT('---.---') 
 <!-- Data di acquisto del veicolo -->
-Data_Acquisto | YEAR - 
+Data_Acquisto | TIMESTAMP -NULL
 <!-- Data di vendita del veicolo (se venduto) -->
-Data_Vendita |  - 
-<!-- Identificativo del proprietario (chiave esterna verso la tabella dei proprietari) -->
-Proprietario_ID |  - 
-<!-- Stato del veicolo (es. Nuovo, Usato, In Vendita, Venduto) -->
-Stato |  - 
-<!-- Note aggiuntive (es. difetti, interventi, ecc.) -->
-Note |  - 
+Data_Vendita | TIMESTAMP -NULL
+<!-- Identificativo del proprietario -->
+Proprietario_ID | VARCHAR(255) -NULL DEFAULT('---') 
+<!-- Stato del veicolo-->
+Stato | VARCHAR(20) -NOTNULL DEFAULT('IN VENDITA')
+<!-- Note aggiuntive -->
+Note | TEXT -NULL DEFAULT('NESSUN INTERVENTO EFFETTUATO') 
 <!-- Numero di telaio del veicolo -->
-Numero_Telaio |  - 
-<!-- Tipo di alimentazione (es. Benzina, Diesel, GPL, Elettrico) -->
-Alimentazione |  - 
+Numero_Telaio | CHAR(17) -NOTNULL UNIQUE INDEX 
+<!-- Tipo di alimentazione -->
+Alimentazione | VARCHAR(50) -NOTNULL DEFAULT('BENZINA') 
 <!-- Cilindrata del motore -->
-Cilindrata |  - 
+Cilindrata | VARCHAR(15) - NOTNULL DEFAULT('1.6 LITRI')
 <!-- Potenza del motore -->
-Potenza |  - 
-<!-- Tipo di cambio (es. Manuale, Automatico) -->
-Tipo_Cambio |  - 
+Potenza | VARCHAR(30) -NOTNULL 
+<!-- Tipo di cambio -->
+Tipo_Cambio | VARCHAR(30) -NOTNULL ('CAMBIO MANUALE') 
 <!-- Numero di porte del veicolo -->
-Numero_Porte |  - 
-<!-- Tipo di carrozzeria (es. Berlina, Coupé, Suv) -->
-Tipo_Carrozzeria |  - 
-<!-- Optional presenti sul veicolo (lista separata o campo con codici) -->
-Optional |  - 
+Numero_Porte | TINYINT -NULL DEFAULT('5')
+<!-- Tipo di carrozzeria -->
+Tipo_Carrozzeria | VARCHAR(20) -NOTNULL INDEX DEFAULT('BERLINA') 
+<!-- Optional presenti sul veicolo-->
+Optional | TEXT -NOTNULL DEFAULT('NESSUN OPTIONAL PRESENTE') 
 <!-- Tipo di immatricolazione (es. Italiana, Estera) -->
-Tipo_Immatricolazione |  - 
+Tipo_Immatricolazione | VARCHAR(50) -NOTNULL 
 <!-- Data di prima immatricolazione -->
-Data_Immatricolazione |  - 
+Data_Immatricolazione | CHAR(20) -NOTNULL INDEX 
 <!-- Provenienza del veicolo (es. Importazione, Aziendale) -->
-Provenienza |  - 
+Provenienza | VARCHAR(100) -NOTNULL INDEX DEFAULT('AZIENDALE') 
 <!-- Informazioni sui tagliandi (data, officina, descrizione) -->
-Tagliandi |  - 
+Tagliandi | TEXT(1000) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Informazioni sulla permuta (auto data in permuta, valore) -->
-Permuta |  - 
+Permuta | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Informazioni sull'IVA applicata (es. 22%, margine) -->
-IVA |  - 
+IVA | VARCHAR(255) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Sconto applicato al prezzo -->
-Sconto |  - 
+Sconto | VARCHAR(50) -NULL DEFAULT('CHIEDERE PER INFO') 
 <!-- Informazioni sulla garanzia (tipo, durata) -->
 Garanzia |  - 
 <!-- Accessori forniti con il veicolo -->
