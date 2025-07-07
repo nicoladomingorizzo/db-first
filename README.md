@@ -2,14 +2,14 @@
 
 Modellizzare la struttura di una tabella per memorizzare tutti i dati riguardanti delle auto usate messe in vendita da un concessionario.
 
-## Table name : Car
+## Table name : Cars
 
 <!-- Identificativo univoco dell'auto -->
 ID_Auto | TEXT -NOTNULL AUTOINCREMENT INDEX
 <!-- Marca del veicolo  -->
 Marca | VARCHAR(30) -NOTNULL INDEX
 <!-- Modello del veicolo-->
-Modello | NOTNULL -INDEX
+Modello | VARCHAR(30) -NOTNULL INDEX
 <!-- Anno di produzione del veicolo -->
 Anno | YEAR -NOTNULL INDEX 
 <!-- Dettagli specifici del modello -->
