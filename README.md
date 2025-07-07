@@ -17,7 +17,7 @@ Allestimento | TEXT(1000) -NOTNULL DEFAULT('VERSIONE BASE')
 <!-- Colore del veicolo -->
 Colore | VARCHAR(20) -NOTNULL DEFAULT('BIANCO')
 <!-- Chilometri percorsi -->
-Chilometraggio | MEDIUMTEXT - NOTNULL INDEX
+Chilometraggio | TEXT - NOTNULL INDEX
 <!-- Prezzo di acquisto del veicolo -->
 Prezzo_Acquisto | VARCHAR(30) -NOTNULL INDEX 
 <!-- Prezzo di vendita del veicolo (se venduto) -->
